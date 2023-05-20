@@ -1,5 +1,15 @@
-import { Box, Button, Flex, Heading, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  HStack,
+  Heading,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavItem = ["Home", "About", "Services", "Blog"];
 
@@ -15,7 +25,7 @@ const Navbar = () => {
     >
       <Flex px={20} alignItems="center" justifyContent="space-between">
         <Heading cursor="pointer" fontFamily="Poppins" size="md">
-          Logo.
+          <Link to="/"> Logo.</Link>
         </Heading>
         <Flex gap={10}>
           <Wrap
@@ -38,7 +48,14 @@ const Navbar = () => {
               </WrapItem>
             ))}
           </Wrap>
-          <Button colorScheme="telegram">Get Started</Button>
+          <HStack fontFamily="poppins" spacing="6" align="center">
+            <Button size="sm" variant="link">
+              <Link to="/login">Login</Link>
+            </Button>
+            <Button fontSize="sm" colorScheme="messenger">
+              <Link to="/register">Register</Link>
+            </Button>
+          </HStack>
         </Flex>
       </Flex>
     </Box>
